@@ -1,9 +1,10 @@
 package com.gebert.quizant.quiz;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Answer {
+public class Answer extends Audit implements Serializable {
 
     @Id
     @GeneratedValue

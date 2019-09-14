@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Attempt implements Serializable {
+public class Attempt extends Audit implements Serializable {
 
 
     @Id

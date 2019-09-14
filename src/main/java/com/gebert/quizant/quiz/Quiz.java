@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-class Quiz implements Serializable {
+class Quiz extends Audit implements Serializable {
 
     @Id
     @GeneratedValue
@@ -16,6 +16,8 @@ class Quiz implements Serializable {
     @OneToMany(mappedBy = "id", cascade = {CascadeType.ALL} )
     private Set<Question> questions;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn( name = "ID_OWNER" )
     private User owner;
 
     public Quiz() {
