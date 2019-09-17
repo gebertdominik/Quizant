@@ -5,11 +5,16 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Table(schema = "quiz")
 public class Question extends Audit implements Serializable {
 
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(allocationSize = 1,
+            initialValue = 1,
+            name = "seqQuestion",
+            sequenceName = "PK_SEQ_QUESTION")
+    @GeneratedValue( generator = "seqQuestion", strategy = GenerationType.SEQUENCE )
     private Long id;
 
     private String questionText;

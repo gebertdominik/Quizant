@@ -4,11 +4,15 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(schema = "quiz")
 public class Attempt extends Audit implements Serializable {
 
-
     @Id
-    @GeneratedValue
+    @SequenceGenerator(allocationSize = 1,
+            initialValue = 1,
+            name = "seqAttempt",
+            sequenceName = "PK_SEQ_ATTEMPT")
+    @GeneratedValue( generator = "seqAttempt", strategy = GenerationType.SEQUENCE )
     private Long id;
 
     @ManyToOne

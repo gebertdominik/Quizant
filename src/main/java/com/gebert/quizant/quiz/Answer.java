@@ -4,10 +4,15 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(schema = "quiz")
 public class Answer extends Audit implements Serializable {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(allocationSize = 1,
+            initialValue = 1,
+            name = "seqAnswer",
+            sequenceName = "PK_SEQ_ANSWER")
+    @GeneratedValue( generator = "seqAnswer", strategy = GenerationType.SEQUENCE )
     private Long id;
 
     private String answerText;
