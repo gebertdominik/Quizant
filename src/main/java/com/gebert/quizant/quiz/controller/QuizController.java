@@ -15,7 +15,7 @@ import javax.persistence.NoResultException;
 @RequestMapping("/quiz")
 public class QuizController {
 
-    QuizRepository quizRepository;
+    private final QuizRepository quizRepository;
 
     @GetMapping("{idQuiz}")
     public Quiz findQuizById(@PathVariable("idQuiz") Long idQuiz){
@@ -25,5 +25,10 @@ public class QuizController {
     @GetMapping("/user/{idUser}")
     public Page<Quiz> findAllQuizesForUser(@PathVariable("idUser") Long idUser, Pageable pageable){
         return quizRepository.findAllByOwner_Id(idUser, pageable);
+    }
+
+
+    public QuizController(QuizRepository quizRepository) {
+        this.quizRepository = quizRepository;
     }
 }
