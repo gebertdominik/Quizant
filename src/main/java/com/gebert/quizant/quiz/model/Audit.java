@@ -1,4 +1,4 @@
-package com.gebert.quizant.quiz;
+package com.gebert.quizant.quiz.model;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Source;

@@ -1,4 +1,4 @@
-package com.gebert.quizant.quiz;
+package com.gebert.quizant.quiz.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(schema = "quiz")
-class Quiz extends Audit implements Serializable {
+public class Quiz extends Audit implements Serializable {
 
     @Id
     @SequenceGenerator(allocationSize = 1,

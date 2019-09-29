@@ -1,4 +1,4 @@
-package com.gebert.quizant.quiz;
+package com.gebert.quizant.quiz.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
